@@ -1,0 +1,20 @@
+{
+    "user": [
+      {
+        "id": "1",
+        "firstname": "Pavan",
+        "lastname": "Surange",
+        "address": "A/p Mahagaon",
+        "email": "omkarpatil7@gmail.com",
+        "phone": 8007296125
+      },
+      {
+        "id": "2",
+        "firstname": "Omkar",
+        "lastname": "Patil",
+        "address": "A/p Mahagaon",
+        "email": "omkarpatil7@gmail.com",
+        "phone": 9975221542
+      }    
+    ]
+  }
