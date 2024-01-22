@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserUpsertComponent } from './user-upsert/user-upsert.component';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { UserService } from './user-list/user.service';
 const appRoute : Routes = [
   {path:"userlist", component: UserListComponent},
   {path:"adduser", component: UserUpsertComponent}
@@ -19,9 +21,10 @@ const appRoute : Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRoute)
+    RouterModule.forRoot(appRoute),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,1 +1,29 @@
-<p>user-list works!</p>
+<div class="container-fluid mt-3">
+    <div class="row mt-5 text-center">
+        <h5>User list</h5>
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <table class="table">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Action</th>
+                      </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let userdata of user">
+                        <td>{{userdata.firstname}} {{userdata.lastname}}</td>
+                        <td>{{userdata.email}}</td>
+                        <td>{{userdata.phone}}</td>
+                        <td>jsdj</td>
+                      </tr>
+                </tbody>
+              </table>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
