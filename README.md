@@ -1,3 +1,14 @@
+#Installation
+
+install Nodejs
+npm install -g @angular/cli@15
+
+#Project SetUp
+
+Download Project
+Run command npm install
+Run command ng serve
+
 # UserManagement
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.10.
