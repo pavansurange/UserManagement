@@ -9,15 +9,18 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './user-list/user.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ToastComponent } from './shared/toast/toast.component';
 const appRoute : Routes = [
   {path:"userlist", component: UserListComponent},
-  {path:"adduser", component: UserUpsertComponent}
+  {path:"user/:id", component: UserUpsertComponent},
+  {path:"user/form", component: UserUpsertComponent}
 ];
 @NgModule({
   declarations: [
     AppComponent,
     UserListComponent,
-    UserUpsertComponent
+    UserUpsertComponent,
+    ToastComponent
   ],
   imports: [
     BrowserModule,

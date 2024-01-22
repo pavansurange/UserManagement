@@ -1,5 +1,6 @@
 <div class="container-fluid">
     <div class="row">
+        <app-toast [show]="showToast" [message]="successMessage"></app-toast>
         <div class="col-md-2"></div>
         <div class="col-md-8">
             <form class="row g-3" [formGroup]="form" (ngSubmit)="onSubmit()">

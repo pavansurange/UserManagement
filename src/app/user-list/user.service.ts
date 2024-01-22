@@ -6,7 +6,7 @@ import { User } from "../models/user-model";
 @Injectable()
 export class UserService {
     //Declare Base Url to access data
-  baseUrl = 'http://localhost:3000/user';
+  baseUrl = 'http://localhost:3000/User';
   constructor(private _httpClient: HttpClient) {
 
   }
@@ -40,5 +40,13 @@ export class UserService {
       console.log(e);
     }
 
+  }
+  getUser=(id:any) : Observable<User> => this._httpClient.get<User>(this.baseUrl+'/'+id).pipe(catchError(this.handleError));
+
+  updateUser=(id:any,user:User) => this._httpClient.put(this.baseUrl+'/'+id,user).pipe(catchError(this.handleError));
+
+  deleteUser(id: number) : Observable<void> {
+    return this._httpClient.delete<void>(`${this.baseUrl}/${id}`)
+    .pipe(catchError(this.handleError));
   }
 }
