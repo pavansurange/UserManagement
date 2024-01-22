@@ -24,4 +24,21 @@ export class UserService {
     }
     return throwError(() => new Error('Something bad happened; please try again later.'));
   }  
+
+  // Post HTTp Call
+
+  addUser(user: User): any {
+    try {
+
+      return this._httpClient.post<User>(this.baseUrl, user, {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json'
+        })
+      }).pipe(catchError(this.handleError));
+    }
+    catch (e) {
+      console.log(e);
+    }
+
+  }
 }

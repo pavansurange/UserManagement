@@ -1,1 +1,49 @@
-<p>user-upsert works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <form class="row g-3" [formGroup]="form" (ngSubmit)="onSubmit()">
+                <h5 class="text-center mt-5 mb-5">{{isEdit? 'Edit User': 'Add User'}}</h5>
+                <div class="col-md-6">
+                  <label for="validationServer01" class="form-label">First name</label>
+                  <input type="text" formControlName="firstname" class="form-control " id="validationServer01" [ngClass]="{ 'is-invalid': form.controls['firstname'].errors && form.controls['firstname'].touched }">
+                  <div class="invalid-feedback" *ngIf="form.controls['firstname'].errors && form.controls['firstname'].touched">
+                    First Name required
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="validationServer02" class="form-label">Last name</label>
+                  <input type="text" formControlName="lastname" class="form-control " id="validationServer02" [ngClass]="{ 'is-invalid': form.controls['lastname'].errors && form.controls['lastname'].touched }">
+                  <div class="invalid-feedback" *ngIf="form.controls['lastname'].errors && form.controls['lastname'].touched">
+                    Last Name required
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <label for="validationServer03" class="form-label">Address</label>
+                  <input type="text" formControlName="address" class="form-control " id="validationServer03" [ngClass]="{ 'is-invalid': form.controls['address'].errors && form.controls['address'].touched }">
+                  <div id="validationServer03Feedback" class="invalid-feedback" *ngIf="form.controls['address'].errors && form.controls['address'].touched" >
+                    Please provide address.
+                  </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="validationServer04" class="form-label">Email</label>
+                    <input type="email" formControlName="email" class="form-control " id="validationServer04" [ngClass]="{ 'is-invalid': form.controls['email'].errors && form.controls['email'].touched }" >
+                    <div id="validationServer03Feedback" class="invalid-feedback" *ngIf="form.controls['email'].errors && form.controls['email'].touched">
+                        Please enter valid Email 
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="validationServer05" class="form-label">Phone Number</label>
+                  <input type="text" formControlName="phone" class="form-control " id="validationServer05" [ngClass]="{ 'is-invalid': form.controls['phone'].errors && form.controls['phone'].touched }">
+                  <div id="validationServer03Feedback" class="invalid-feedback" *ngIf="form.controls['phone'].errors && form.controls['phone'].touched">
+                    Please enter valid Phone number
+                  </div>                
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-primary" type="submit" >{{isEdit? 'Update': 'Save'}}</button>
+                </div>
+              </form>
+        </div>        
+        <div class="col-md-2"></div>
+    </div>
+</div>

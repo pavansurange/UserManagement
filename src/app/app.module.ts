@@ -8,6 +8,7 @@ import { UserUpsertComponent } from './user-upsert/user-upsert.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './user-list/user.service';
+import { ReactiveFormsModule } from '@angular/forms';
 const appRoute : Routes = [
   {path:"userlist", component: UserListComponent},
   {path:"adduser", component: UserUpsertComponent}
@@ -22,7 +23,8 @@ const appRoute : Routes = [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoute),
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
